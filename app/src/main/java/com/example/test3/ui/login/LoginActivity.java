@@ -42,16 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
-        final Button loginButtonFB = findViewById(R.id.loginFB);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
-
-        loginButtonFB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                setContentView(R.layout.activity_confirm_personal_info);
-            }
-        });
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
