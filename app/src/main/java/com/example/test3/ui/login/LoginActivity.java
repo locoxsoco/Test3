@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                
+                setContentView(R.layout.activity_confirm_personal_info);
             }
         });
 
