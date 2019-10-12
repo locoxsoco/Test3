@@ -1,11 +1,11 @@
 package com.example.test3.ui.login;
 
 import android.app.Activity;
-import android.content.Intent;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -151,7 +151,7 @@ public class StartMenu extends AppCompatActivity {
 
 
 
-        
+
     }
 
     public void Siguiente(View view){
