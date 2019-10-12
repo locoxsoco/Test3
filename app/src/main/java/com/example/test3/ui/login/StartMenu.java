@@ -1,26 +1,20 @@
 package com.example.test3.ui.login;
 
 import android.app.Activity;
+import android.content.Intent;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.telecom.Call;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,31 +24,27 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.test3.Formulario;
+import com.example.test3.Login;
 import com.example.test3.R;
-import com.example.test3.ui.login.LoginViewModel;
-import com.example.test3.ui.login.LoginViewModelFactory;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class LoginActivity extends AppCompatActivity {
+public class StartMenu extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private LoginButton loginButtonFB;
@@ -66,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_start_menu);
         loginButtonFB = findViewById(R.id.login_button);
 
         callbackManager = CallbackManager.Factory.create();
@@ -75,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButtonFB.registerCallback(callbackManager, new FacebookCallback<com.facebook.login.LoginResult>() {
             @Override
             public void onSuccess(com.facebook.login.LoginResult loginResult) {
+                //GoForm(Formulario);
             }
 
             @Override
@@ -87,7 +78,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
@@ -108,7 +98,6 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 Log.e("Rest responseeeeee: ",response.toString());
-                                setContentView(R.layout.activity_confirm_personal_info);
 
                             }
                         },
@@ -165,6 +154,16 @@ public class LoginActivity extends AppCompatActivity {
         
     }
 
+    public void Siguiente(View view){
+        Intent sgt = new Intent(this, Login.class);
+        startActivity(sgt);
+    }
+
+    public void GoForm(View view){
+        Intent sgt = new Intent(this, Formulario.class);
+        startActivity(sgt);
+    }
+
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
@@ -205,4 +204,6 @@ public class LoginActivity extends AppCompatActivity {
         request.setParameters(parameters);
         request.executeAsync();
     }
+
+
 }
