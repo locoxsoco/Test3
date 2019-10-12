@@ -75,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
         loginButtonFB.registerCallback(callbackManager, new FacebookCallback<com.facebook.login.LoginResult>() {
             @Override
             public void onSuccess(com.facebook.login.LoginResult loginResult) {
-
             }
 
             @Override
@@ -85,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(FacebookException error) {
-
+                setContentView(R.layout.activity_login);
             }
         });
 
