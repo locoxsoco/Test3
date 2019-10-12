@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         loginButtonFB = findViewById(R.id.login_button);
 
         callbackManager = CallbackManager.Factory.create();
@@ -162,7 +163,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        
+
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
