@@ -13,7 +13,7 @@ public class Formulario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         WebView myWebView = new WebView(this);
         setContentView(myWebView);
-        myWebView.loadUrl("https://developerplatform.typeform.com/to/XF0JAH");
+        myWebView.loadUrl("https://developerplatform.typeform.com/to/FwnRyS");
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
