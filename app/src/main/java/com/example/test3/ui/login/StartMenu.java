@@ -20,7 +20,9 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -35,6 +37,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.test3.Formulario;
 import com.example.test3.Login;
 import com.example.test3.R;
+import com.example.test3.TheMainOne;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -57,7 +60,7 @@ public class StartMenu extends AppCompatActivity {
     private LoginButton loginButtonFB;
     private CircleImageView circleImageView;
     private TextView txtName,txtEmail;
-
+    //private WebView browser;
     private CallbackManager callbackManager;
 
     @Override
@@ -92,7 +95,7 @@ public class StartMenu extends AppCompatActivity {
         loginButtonFB.registerCallback(callbackManager, new FacebookCallback<com.facebook.login.LoginResult>() {
             @Override
             public void onSuccess(com.facebook.login.LoginResult loginResult) {
-                //GoForm(Formulario);
+                //GoForm();
             }
 
             @Override
@@ -125,6 +128,7 @@ public class StartMenu extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 Log.e("Rest responseeeeee: ",response.toString());
+                                //GoForm();
 
                             }
                         },
@@ -136,6 +140,7 @@ public class StartMenu extends AppCompatActivity {
                             }
                         }
                 );
+                GoForm();
                 requestQueue.add(objectRequest);
             }
         });
@@ -170,14 +175,12 @@ public class StartMenu extends AppCompatActivity {
                     updateUiWithUser(loginResult.getSuccess());
                 }
                 setResult(Activity.RESULT_OK);
-
+                //GoForm();
                 //Complete and destroy login activity once successful
                 finish();
+
             }
         });
-
-
-
 
     }
 
@@ -186,7 +189,7 @@ public class StartMenu extends AppCompatActivity {
         startActivity(sgt);
     }
 
-    public void GoForm(View view){
+    public void GoForm(){
         Intent sgt = new Intent(this, Formulario.class);
         startActivity(sgt);
     }
