@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".PickingActivity">
 
+    <TextView
+        android:id="@+id/textViewFb"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Facebook friends"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/listViewFbFriends"
+        app:layout_constraintTop_toTopOf="@+id/listViewFbFriends"></TextView>
+
+    <ListView
+        android:id="@+id/listViewFbFriends"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFb"></ListView>
+    <TextView
+        android:id="@+id/textViewNew"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="New friends"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/listViewFbFriends"></TextView>
+
+    <ListView
+        android:id="@+id/listViewNewFriends"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNew"></ListView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

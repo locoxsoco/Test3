@@ -34,9 +34,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.test3.Formulario;
 import com.example.test3.Login;
-import com.example.test3.Formulario;
-import com.example.test3.Login;
-import com.example.test3.PickingActivity;
 import com.example.test3.R;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -68,7 +65,6 @@ public class StartMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_menu);
         createNotificationChannel();
-        setContentView(R.layout.activity_login);
 
         // Create an explicit intent for an Activity in your app
         Intent intent = new Intent(this, PickingActivity.class);
@@ -77,8 +73,8 @@ public class StartMenu extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "YOUR_CHANNEL_ID")
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle("Holiwis")
-                .setContentText("Habia una vez un pollito llamado ganzo")
+                .setContentTitle("Are you going home?")
+                .setContentText("There are some friends going near home too")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
@@ -112,7 +108,7 @@ public class StartMenu extends AppCompatActivity {
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final Button loginButton = findViewById(R.id.login);
+        final Button loginButton = findViewById(R.id.login6);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loginButtonFB.setOnClickListener(new View.OnClickListener() {
