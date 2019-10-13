@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-public class formulario extends AppCompatActivity {
+public class Formulario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class formulario extends AppCompatActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        //myWebView.loadUrl("https://valeriaurbina.typeform.com/to/GMWAZp");
+        //setContentView(R.layout.activity_formulario);
 
     }
 }
