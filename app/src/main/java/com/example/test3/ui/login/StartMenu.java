@@ -95,7 +95,6 @@ public class StartMenu extends AppCompatActivity {
         loginButtonFB.registerCallback(callbackManager, new FacebookCallback<com.facebook.login.LoginResult>() {
             @Override
             public void onSuccess(com.facebook.login.LoginResult loginResult) {
-                //GoForm();
             }
 
             @Override
@@ -128,7 +127,6 @@ public class StartMenu extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 Log.e("Rest responseeeeee: ",response.toString());
-                                //GoForm();
 
                             }
                         },
@@ -175,7 +173,6 @@ public class StartMenu extends AppCompatActivity {
                     updateUiWithUser(loginResult.getSuccess());
                 }
                 setResult(Activity.RESULT_OK);
-                //GoForm();
                 //Complete and destroy login activity once successful
                 finish();
 
@@ -190,6 +187,11 @@ public class StartMenu extends AppCompatActivity {
     }
 
     public void GoForm(){
+        Intent sgt = new Intent(this, Formulario.class);
+        startActivity(sgt);
+    }
+
+    public void LetsGoForm(View view){
         Intent sgt = new Intent(this, Formulario.class);
         startActivity(sgt);
     }
